@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KarthikaMart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <p>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="orders.html">My Orders</a>
+        <a href="seller.html">Seller Dashboard</a>
+        <a href="admin.html">Admin Dashboard</a>
+    </p>
+
+    <h1>Welcome to KarthikaMart</h1>
+    <p>Online Shopping Marketplace</p>
+
+    <h2>Products</h2>
+
+    <div>
+        <h3>Mobile Phone</h3>
+        <p>Price: ₹15,000</p>
+        <button onclick="addToCart('Mobile Phone', 15000)">
+            Add to Cart
+        </button>
+    </div>
+
+    <div>
+        <h3>Laptop</h3>
+        <p>Price: ₹45,000</p>
+        <button onclick="addToCart('Laptop', 45000)">
+            Add to Cart
+        </button>
+    </div>
+
+    <div>
+        <h3>Headphones</h3>
+        <p>Price: ₹2,000</p>
+        <button onclick="addToCart('Headphones', 2000)">
+            Add to Cart
+        </button>
+    </div>
+
+    <h2>Cart</h2>
+
+    <p id="cart">Cart is empty</p>
+    <p id="total">Total: ₹0</p>
+
+    <script>
+        let cartItems = [];
+        let total = 0;
+
+        function addToCart(product, price) {
+
+            cartItems.push(product);
+            total = total + price;
+
+            document.getElementById("cart").innerText =
+                "Cart: " + cartItems.join(", ");
+
+            document.getElementById("total").innerText =
+                "Total: ₹" + total;
+        }
+    </script>
+
+</body>
+</html>

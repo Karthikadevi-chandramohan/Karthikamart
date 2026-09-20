@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KarthikaMart Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>KarthikaMart</h1>
+
+    <h2>Checkout</h2>
+
+    <form onsubmit="placeOrder(event)">
+
+        <label>Customer Name:</label><br>
+        <input type="text" required><br><br>
+
+        <label>Address:</label><br>
+        <textarea required></textarea><br><br>
+
+        <label>Payment Method:</label><br>
+        <select required>
+            <option>Cash on Delivery</option>
+            <option>Demo Payment</option>
+        </select><br><br>
+
+        <button type="submit">Place Order</button>
+
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        function placeOrder(event) {
+            event.preventDefault();
+
+            document.getElementById("message").innerText =
+                "Order placed successfully!";
+        }
+    </script>
+
+</body>
+</html>

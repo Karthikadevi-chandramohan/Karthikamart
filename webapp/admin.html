@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard - KarthikaMart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>KarthikaMart</h1>
+    <h2>Admin Dashboard</h2>
+
+    <h3>Manage Users</h3>
+    <p>Buyer - 10 Users</p>
+    <p>Seller - 5 Sellers</p>
+
+    <h3>Manage Orders</h3>
+    <p>Pending Orders: 3</p>
+    <p>Delivered Orders: 7</p>
+
+    <h3>Manage Products</h3>
+
+    <div>
+        <p><b>Mobile Phone</b></p>
+        <p>Price: ₹15,000</p>
+        <button onclick="removeProduct()">Remove Product</button>
+    </div>
+
+    <p id="message"></p>
+
+    <script>
+        function removeProduct() {
+            document.getElementById("message").innerText =
+                "Product removed successfully!";
+        }
+    </script>
+
+</body>
+</html>

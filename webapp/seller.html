@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seller Dashboard - KarthikaMart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>KarthikaMart</h1>
+    <h2>Seller Dashboard</h2>
+
+    <h3>Add Product</h3>
+
+    <form onsubmit="addProduct(event)">
+        <label>Product Name:</label><br>
+        <input type="text" id="productName" required><br><br>
+
+        <label>Price:</label><br>
+        <input type="number" id="price" required><br><br>
+
+        <label>Stock:</label><br>
+        <input type="number" id="stock" required><br><br>
+
+        <button type="submit">Add Product</button>
+    </form>
+
+    <h3>Products</h3>
+    <p id="message"></p>
+
+    <script>
+        function addProduct(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("productName").value;
+            let price = document.getElementById("price").value;
+            let stock = document.getElementById("stock").value;
+
+            document.getElementById("message").innerText =
+                name + " added successfully! Price: ₹" + price +
+                " | Stock: " + stock;
+        }
+    </script>
+
+</body>
+</html>
