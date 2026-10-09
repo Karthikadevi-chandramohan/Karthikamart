@@ -5,11 +5,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -22,27 +20,23 @@ public class LoginServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+        UserDAO userDAO = new UserDAO();
+        User user = userDAO.loginUser(email, password);
+        System.out.println("Email received: " + email);
+        System.out.println("User found: " + (user != null));
 
-        try (Connection connection = DatabaseConnection.getConnection();
-             PreparedStatement statement = connection.prepareStatement(sql)) {
+        response.setContentType("text/html;charset=UTF-8");
 
-            statement.setString(1, email);
-            statement.setString(2, password);
+        if (user != null) {
+            HttpSession session = request.getSession();
+            session.setAttribute("userId", user.getId());
+            session.setAttribute("userEmail", user.getEmail());
+            session.setAttribute("userRole", user.getRole());
 
-            ResultSet result = statement.executeQuery();
-
-            response.setContentType("text/html;charset=UTF-8");
-
-            if (result.next()) {
-                response.getWriter().println("Login successful!");
-            } else {
-                response.getWriter().println("Invalid email or password!");
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            response.getWriter().println("Login failed!");
+            response.sendRedirect("admin");
+        } else {
+            response.getWriter().println("Invalid email or password!");
+            System.out.println("LOGIN CHECK: " + (user != null));
         }
     }
 }
