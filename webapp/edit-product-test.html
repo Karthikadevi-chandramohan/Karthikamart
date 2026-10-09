@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+</head>
+
+<body>
+
+    <h1>KarthikaMart</h1>
+
+    <h2>Edit Product</h2>
+
+    <form action="updateProduct" method="post">
+
+        <label>Product ID:</label><br>
+        <input type="number"
+               name="id"
+               value="1"
+               required>
+
+        <br><br>
+
+        <label>Product Name:</label><br>
+        <input type="text"
+               name="name"
+               value="Mobile"
+               required>
+
+        <br><br>
+
+        <label>Description:</label><br>
+        <input type="text"
+               name="description"
+               value="Updated Mobile"
+               required>
+
+        <br><br>
+
+        <label>Price:</label><br>
+        <input type="number"
+               name="price"
+               value="18000"
+               step="0.01"
+               required>
+
+        <br><br>
+
+        <label>Stock:</label><br>
+        <input type="number"
+               name="stock"
+               value="40"
+               min="0"
+               required>
+
+        <br><br>
+
+        <label>Category:</label><br>
+        <input type="text"
+               name="category"
+               value="Electronics"
+               required>
+
+        <br><br>
+
+        <label>Image URL:</label><br>
+        <input type="text"
+               name="imageUrl"
+               value="">
+
+        <br><br>
+
+        <button type="submit">
+            Update Product
+        </button>
+
+    </form>
+
+</body>
+</html>

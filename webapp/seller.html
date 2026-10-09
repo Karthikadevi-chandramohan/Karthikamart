@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <head>
     <meta charset="UTF-8">
-    <title>Seller Dashboard - KarthikaMart</title>
+    <title>KarthikaMart Seller</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,37 +11,29 @@
     <h1>KarthikaMart</h1>
     <h2>Seller Dashboard</h2>
 
-    <h3>Add Product</h3>
+    <form action="addProduct" method="post">
 
-    <form onsubmit="addProduct(event)">
         <label>Product Name:</label><br>
-        <input type="text" id="productName" required><br><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Description:</label><br>
+        <textarea name="description"></textarea><br><br>
 
         <label>Price:</label><br>
-        <input type="number" id="price" required><br><br>
+        <input type="number" name="price" step="0.01" required><br><br>
 
         <label>Stock:</label><br>
-        <input type="number" id="stock" required><br><br>
+        <input type="number" name="stock" required><br><br>
+
+        <label>Category:</label><br>
+        <input type="text" name="category" required><br><br>
+
+        <label>Image URL:</label><br>
+        <input type="text" name="imageUrl"><br><br>
 
         <button type="submit">Add Product</button>
+
     </form>
-
-    <h3>Products</h3>
-    <p id="message"></p>
-
-    <script>
-        function addProduct(event) {
-            event.preventDefault();
-
-            let name = document.getElementById("productName").value;
-            let price = document.getElementById("price").value;
-            let stock = document.getElementById("stock").value;
-
-            document.getElementById("message").innerText =
-                name + " added successfully! Price: ₹" + price +
-                " | Stock: " + stock;
-        }
-    </script>
 
 </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add To Cart Test</title>
+</head>
+
+<body>
+
+    <h2>KarthikaMart - Add To Cart</h2>
+
+    <form action="addToCart" method="post">
+
+        <input type="hidden"
+               name="productId"
+               value="1">
+
+        <label>Quantity:</label>
+
+        <input type="number"
+               name="quantity"
+               value="1"
+               min="1"
+               required>
+
+        <br><br>
+
+        <button type="submit">
+            Add To Cart
+        </button>
+
+    </form>
+
+</body>
+</html>

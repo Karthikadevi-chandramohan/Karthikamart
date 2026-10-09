@@ -1,0 +1,160 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Update Product - KarthikaMart</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff4e0;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .box {
+            background: white;
+            width: 400px;
+            max-width: 90%;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #ccc;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff9900;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 11px;
+            margin-top: 6px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #ff9900;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e68a00;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #ff6600;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>KarthikaMart</h1>
+
+    <h2>Update Product</h2>
+
+    <form action="updateProduct" method="post">
+
+        <label>Product ID</label>
+        <input
+            type="number"
+            name="id"
+            value="1"
+            required
+        >
+
+        <label>Product Name</label>
+        <input
+            type="text"
+            name="name"
+            value="Mobile"
+            required
+        >
+
+        <label>Description</label>
+        <input
+            type="text"
+            name="description"
+            value="Updated Mobile"
+            required
+        >
+
+        <label>Price</label>
+        <input
+            type="number"
+            name="price"
+            value="18000"
+            step="0.01"
+            min="0"
+            required
+        >
+
+        <label>Stock</label>
+        <input
+            type="number"
+            name="stock"
+            value="10"
+            min="0"
+            required
+        >
+
+        <label>Category</label>
+        <input
+            type="text"
+            name="category"
+            value="Electronics"
+            required
+        >
+
+        <label>Image URL</label>
+        <input
+            type="text"
+            name="imageUrl"
+            placeholder="Enter image URL"
+        >
+
+        <button type="submit">
+            Update Product
+        </button>
+
+    </form>
+
+    <a href="products" class="back">
+        Back to Products
+    </a>
+
+</div>
+
+</body>
+</html>
+```
