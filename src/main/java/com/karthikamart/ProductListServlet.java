@@ -80,6 +80,9 @@ public class ProductListServlet extends HttpServlet {
                 "<div class='product'>" +
                 "<h3>" + escapeHtml(product.getName()) + "</h3>" +
                 "<p>" + escapeHtml(product.getDescription()) + "</p>" +
+                "<img src='" + escapeHtml(product.getImageUrl()) +
+                "' alt='" + escapeHtml(product.getName()) +
+                "' style='width:150px;height:150px;object-fit:contain;'>" +
                 "<p>Price: ₹" + product.getPrice() + "</p>" +
                 "<p>Category: " + escapeHtml(product.getCategory()) + "</p>" +
                 "<p>Stock: " + product.getStock() + "</p>" +
